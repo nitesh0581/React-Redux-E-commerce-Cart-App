@@ -44,6 +44,7 @@ function CardDetails() {
 			<section className="container mt-3">
 				<div className="itemsdetails">
 					{
+						// eslint-disable-next-line
 						cartItems.filter((ele) => ele.id ==id).map((ele) => {
 
 							return (
