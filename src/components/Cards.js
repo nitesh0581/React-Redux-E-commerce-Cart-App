@@ -11,7 +11,6 @@ import {useDispatch} from "react-redux";
 
 
 function Cards() {
-	// const[data,setData]=useState(Cardsdata);
 
 	const dispatch = useDispatch();
 

@@ -1,36 +1,35 @@
 import React from "react";
 import Table from '@mui/material/Table';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {useNavigate} from "react-router-dom";
-import {useSelector, useDispatch} from "react-redux";
-import {DLT} from "../redux/actions/action";
+import { useNavigate, useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { DLT, ADD, REMOVE } from "../redux/actions/action";
 
 function CardDetails() {
 
-	// getting the id we are passing of particular product
-	// const { id } = useParams();
 
+	// getting the id we are passing of particular product
+	const { id } = useParams();
+
+	// use to navigate objects from nested child component to parent page
 	const history = useNavigate();
 
+	// used to send data
 	const dispatch = useDispatch();
 
+	// getting items in cart
 	const cartItems = useSelector((state) => state.rootReducer.cartReducer.carts);
-	// console.log(getData);
 
-	// const compare = () => {
-	//     let compareData = getData.filter((e) => {
-	//         return e.id === id
-	//     });
-	//     setData(compareData);
-	// }
+	// add quantity
 
-	//useEffect will call this function whenever id of selected product changes
-	// useEffect(() => {
-	//     let compareData = getData.filter((e) => {
-	//         return e.id === id
-	//     });
-	//     setData(compareData);
-	// }, [id])
+	const send=(e)=>{
+		dispatch(ADD(e));
+	}
+
+	// remove one quantity
+	const remove = (item)=>{
+		dispatch(REMOVE(item))
+	  }
 
 
 	const dlt = (id) => {
@@ -45,24 +44,30 @@ function CardDetails() {
 			<section className="container mt-3">
 				<div className="itemsdetails">
 					{
-						cartItems.map((ele) => {
+						cartItems.filter((ele) => ele.id == id).map((ele) => {
+
 							return (
-								<React.Fragment key={Math.random()}>
+								<React.Fragment key={ele.id}>
 									<div className="items_img">
-										<img src={ele.imgdata} alt="" style={{maxHeight: "300px"}}/>
+										<img src={ele.imgdata} alt="" style={{ height: "300px" }} />
 									</div>
 
 									<div className="details">
 										<Table>
 											<tr>
 												<td>
-													<p><strong>Resturant:</strong> {ele.rname}</p>
-													<br/>
+													<p><strong>Restaurant:</strong> {ele.rname}</p>
+													<br />
 													<p><strong>Price:</strong> ₹ {ele.price}</p>
-													<br/>
+													<br />
 													<p><strong>Dishes:</strong> {ele.address}</p>
-													<br/>
-													<p><strong>Total:</strong> ₹ 300</p>
+													<br />
+													<p><strong>Total:</strong> ₹ {ele.price * ele.qnty}</p>
+													<div className="mt-4 d-flex justify-content-between align-items-center" style={{ width: 100, cursor: "pointer", background: "#ddd", color: "#111", padding: 5 }}>
+														<span style={{ fontSize: 24 }} onClick={ele.qnty <= 1 ? () => dlt(ele.id) : () => remove(ele)}>-</span>
+														<span style={{ fontSize: 22 }}>{ele.qnty}</span>
+														<span style={{ fontSize: 24 }} onClick={() => send(ele)}>+</span>
+													</div>
 												</td>
 												<td>
 													<p><strong>Rating: </strong><span style={{
@@ -71,12 +76,12 @@ function CardDetails() {
 														borderRadius: "5px",
 														color: "white"
 													}}> {ele.rating}★</span></p>
-													<br/>
+													<br />
 													<p><strong>Order Review: </strong> {ele.somedata}</p>
-													<br/>
+													<br />
 													<p><strong>Remove: </strong><DeleteIcon
-														style={{cursor: "pointer", color: "red", fontSize: "25"}} onClick={() => dlt(ele.id)}/></p>
-													<br/>
+														style={{ cursor: "pointer", color: "red", fontSize: "25" }} onClick={() => dlt(ele.id)} /></p>
+													<br />
 												</td>
 											</tr>
 										</Table>

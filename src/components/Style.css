@@ -12,18 +12,15 @@
 }
 
   .itemsdetails{
-      max-width: 80%;
+      max-width: 800px;
       margin: auto;
       display: flex;
       justify-content: space-between;
-      /* flex-wrap: wrap; */
       align-items: center;
       box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.082);
   }
   .items_img{
       flex: .4;
-      
-
   }
   .items_img img{
       width: 20rem;

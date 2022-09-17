@@ -53,13 +53,13 @@
     display: flex;
     justify-content: center;
 }
-/* css for div showing items in cart */
+/* css for popup showing items in cart */
 .card_details {
     width: 20vw;
     display: flex;
     margin-top: 10px;
     justify-content: center;
-     align-items: center;
+    align-items: center;
 } 
 
 .cart_image {
