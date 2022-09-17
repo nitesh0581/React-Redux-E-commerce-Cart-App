@@ -44,7 +44,7 @@ function CardDetails() {
 			<section className="container mt-3">
 				<div className="itemsdetails">
 					{
-						cartItems.filter((ele) => ele.id == id).map((ele) => {
+						cartItems.filter((ele) => ele.id ==id).map((ele) => {
 
 							return (
 								<React.Fragment key={ele.id}>

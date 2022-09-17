@@ -5,6 +5,7 @@
 
     const cartReducer = (state = INIT_STATE, action) => {
 
+   
         switch (action.type) {
             case "ADD_CART": {
 
@@ -24,7 +25,8 @@
                         ...state,
                         carts:[...state.carts, temp]
                 }
-                }                                                                                                         
+                } 
+                                                                                                                       
             }
             case "RMV_CART":{
 
@@ -43,7 +45,8 @@
                 if(state.carts[itemIndex_Dec].qnty >= 1){                                                                                                   
                     const dltiteams = state.carts[itemIndex_Dec].qnty -= 1
                     console.log([...state.carts, dltiteams]);
-    
+                   
+                    
                     return {
                         ...state,
                         carts:[...state.carts],
@@ -54,7 +57,8 @@
                 // but if qnty is already 1 then on on click dlt that item
                 else if(state.carts[itemIndex_Dec].qnty === 1 ){
                     const data = state.carts.filter((el)=>el.id !== action.payload);
-    
+                    
+                   
                     return {       
                         ...state,
                         carts:data
@@ -62,7 +66,7 @@
                    
                 }
             }
-
+        // eslint-disable-next-line
             default:
                 return state
         }
