@@ -65,8 +65,8 @@ function Header() {
 
 			<div className="header_buttons">
 
-				<button>Login</button>
-				<button>SignUp</button>
+				{/* <button>Login</button>
+				<button>SignUp</button> */}
 
 				<button>
 					<Badge badgeContent={getData.length} color="warning"

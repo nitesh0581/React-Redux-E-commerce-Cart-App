@@ -41,6 +41,15 @@
           align-items: center;
           justify-content: center;
       }
+      .product{
+        flex-direction: column;
+      }
+      .card_style{
+        width: 80% !important;
+      }
+      .logo {
+        width: 80px !important;
+        }
   }
   
   @media (max-width:450px){
