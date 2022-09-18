@@ -98,7 +98,7 @@ function Header() {
 											<th>Restaurant Name</th>
 										</tr>
 									</thead>
-									<hr style={{ width: "220%", backgroundColor: "black", height: "5px" }} />
+									<hr style={{ width: "220%", backgroundColor:"black", height: "5px", opacity:1 }} />
 									<tbody>
 										{
 											getData.map((e) => {
@@ -127,6 +127,9 @@ function Header() {
 																}}>
 																	<DeleteIcon onClick={() => dlt(e.id)} />
 																</p>
+																<NavLink to={`/cart/${e.id}`}>
+																<button onClick={handleClose} style={{padding:"3px 6px", borderRadius:"10px", backgroundColor:"black", color:"white"}}>Check Details</button>
+																</NavLink>
 															</td>
 														</tr>
 														<hr style={{ width: "220%" }} />

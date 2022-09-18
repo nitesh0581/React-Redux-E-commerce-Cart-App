@@ -5,17 +5,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import "./Style.css";
-import {Button, CardActionArea, CardActions} from '@mui/material';
-import {ADD} from "../redux/actions/action";
-import {useDispatch} from "react-redux";
-
+import { Button, CardActionArea, CardActions } from '@mui/material';
+import { ADD } from "../redux/actions/action";
+import { useDispatch} from "react-redux";
 
 function Cards() {
 
 	const dispatch = useDispatch();
-
+	
 	const sendData = (e) => {
-		dispatch(ADD(e))
+			dispatch(ADD(e));
 	}
 
 	return (
@@ -27,14 +26,14 @@ function Cards() {
 					Cardsdata.map((element, id) => {
 						return (
 							<React.Fragment key={Math.random()}>
-								<Card sx={{width: "20vw", height: "200", border: "none"}}
-								      className="mx-4 mt-4 card_style">
+								<Card sx={{ width: "20vw", height: "200", border: "none" }}
+									className="mx-4 mt-4 card_style">
 									<CardActionArea>
 										<CardMedia className="mt-3"
-										           component="img"
-										           height="200"
-										           image={element.imgdata}
-										           alt="green iguana"
+											component="img"
+											height="200"
+											image={element.imgdata}
+											alt="green iguana"
 										/>
 										<CardContent>
 											<Typography gutterBottom variant="h5" component="div">
@@ -45,7 +44,7 @@ function Cards() {
 											</Typography>
 										</CardContent>
 									</CardActionArea>
-									<CardActions style={{justifyContent: 'center'}}>
+									<CardActions style={{ justifyContent: 'center' }}>
 
 										<Button size="small" variant="contained" onClick={() => sendData(element)}>
 											Add to Cart
