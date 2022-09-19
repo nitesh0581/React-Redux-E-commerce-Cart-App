@@ -138,7 +138,14 @@ function Header() {
 											})
 										}
 									</tbody>
-									<p className="text-center">Total:₹ {price}</p>
+								
+									<p className="text-left">Total: ₹{price}</p>
+									<NavLink to="/" onClick={handleClose}>
+									<button style={{padding:"3px 6px", borderRadius:"10px", backgroundColor:"black", color:"white"}} onClick={()=>{alert("Hurray! Your order is booked")
+									getData.length=0;
+								}}> Order Now</button>
+								</NavLink>
+									
 								</Table>
 							</div>
 							:

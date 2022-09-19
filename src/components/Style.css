@@ -10,7 +10,7 @@
   .card_style:hover{
     box-shadow: 0 0 5px 8px rgba(0, 0, 0, 0.082);
 }
-
+/* cart details page item css */
   .itemsdetails{
       max-width: 800px;
       margin: auto;
