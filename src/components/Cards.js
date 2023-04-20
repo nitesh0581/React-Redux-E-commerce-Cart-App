@@ -19,7 +19,7 @@ function Cards() {
 
 	return (
 		<div className='container mt-3'>
-			<h2 className='text-center'>Add to Cart Projects</h2>
+			<h2 className='text-center'>Add to Cart App</h2>
 
 			<div className="row d-flex justify-content-center align-items-center product">
 				{

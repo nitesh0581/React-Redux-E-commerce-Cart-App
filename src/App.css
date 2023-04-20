@@ -6,7 +6,7 @@
 
 .header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     background-color: rgb(97, 88, 182);
     color: white;
