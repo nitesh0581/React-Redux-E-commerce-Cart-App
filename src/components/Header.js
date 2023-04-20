@@ -59,14 +59,11 @@ function Header() {
 				</NavLink>
 			</div>
 
-			<div className="header_search">
+			{/* <div className="header_search">
 				<input type="text" placeholder="Search Item Here..."/>
-			</div>
+			</div> */}
 
 			<div className="header_buttons">
-
-				{/* <button>Login</button>
-				<button>SignUp</button> */}
 
 				<button>
 					<Badge badgeContent={getData.length} color="warning"
@@ -158,8 +155,6 @@ function Header() {
 								<img className="cart_image" src="https://react-redux-cart-youtube.netlify.app/cart.gif" alt="" />
 							</div>
 					}
-
-
 				</Menu>
 			</div>
 
