@@ -13,7 +13,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Cards() {
   const dispatch = useDispatch();
-  const [showMinus, setShowMinus] = useState(false);
   const getData = useSelector((state) => state.rootReducer.cartReducer.carts);
   console.log(getData, "getdata");
   const [itemQuantity, setItemQuantity] = useState([]);
