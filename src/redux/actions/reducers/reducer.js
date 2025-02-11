@@ -18,7 +18,7 @@ const INIT_STATE = {
             ),
           };
         } else {
-          // New item, add to the cart
+          // add New item to the cart
           const newItem = { ...action.payload, qnty: 1 };
           return {
             ...state,
